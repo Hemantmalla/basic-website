@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PROJECT-1 </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #settings {
+            margin-top: 0px;
+            margin-left: 288px;
+        }
+
+        button {
+            float: right;
+            padding: 8px;
+            margin-right: 12px;
+            background-color: orange;
+            color: white;
+            border-radius: 10px;
+            border: 1px solid orange;
+            font-weight: 600;
+            font-size: 18px;
+            font-family: auto;
+        }
+
+        .hom {
+            margin-top: -3px;
+        }
+
+        #content {
+            width: 400px;
+            height: fit-content;
+            padding: 20px;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 21px;
+            margin-left: 390px;
+        }
+    </style>
+</head>
+
+<body id="profile">
+    <div style="display: flex; flex-direction:row; margin-top: 20px;">
+        <div id="content">
+            <p id="p1"></p>
+            <p id="p2"></p>
+            <p id="p3"></p>
+            <p id="p4"></p>
+        </div>
+        <form action="" id="settings">
+            <a href="/settings.html"><button type="button"> SETTINGS </button></a>
+        </form>
+    </div>
+</body>
+<script>
+    if (document.body.id === "profile") {
+        const profile = document.getElementById("profile");
+        const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+        if (loggedInUser) {
+            p1.textContent = `Name: ${loggedInUser.name}`;
+            p2.textContent = `Gmail: ${loggedInUser.gmail}`;
+            $.get('https://jsonplaceholder.typicode.com/users/1', (user) => {
+                    $("#p3").append(`<p> Phone-No: ${user.phone} </p>`);
+                    $("#p4").append(`<p id="address"> Address: ${user.address.street}, ${user.address.suite}, ${user.address.city} </p>`,`<p id="address"> Zipcode: ${user.address.zipcode} </p>`);
+                
+            });
+        }
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction</title>
+    <style background-attachment: fixed;>
+        body {
+            background-image: url(/nature\ \(3\).jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: 108px;
+        }
+
+        form {
+            border-radius: 2%;
+            background-color: transparent;
+            backdrop-filter: blur(100px);
+            color: white;
+            box-shadow: -10px 0 10px rgb(0, 0, 0, 0.1);
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <form id="signupForm" action="" style="border: 2px solid black; width: 35%; height: 35%; padding: 24px 50px;" method="post">
+            <h1> SIGN-UP </h1>
+            <label for="Name"> Name: </label>
+            <input type="text" id="signupName" placeholder="Name" name="Username" required><br><br>
+            <label for="Gmail"> Gmail: </label>
+            <input type="Gmail" id="signupGmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, }$" placeholder="Enter Gmail" name="Gmail" required><br><br>
+            <label for="password"> Password: </label>
+            <input type="password" id="signupPassword" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$"  title="Password must contain at least one uppercase letter, one lowercase letter, one number, one special character, and be 8-16 characters long."  placeholder="password" name="password" required><br><br>
+            <label for="Confirm password"> Confirm_password: </label>
+            <input type="password" id="signupConfirmPassword" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$"  title="Password must contain at least one uppercase letter, one lowercase letter, one number, one special character, and be 8-16 characters long."  placeholder="confirm_password" name="confirm_password" required><br><br>
+            <p><a href="login.html" style="color: white;"> have account? </a></p>
+            <button type="submit" style="background-color: #007bff; padding: 8px 15px 8px 15px; border: 1px solid black; border-radius: 12px;"> SIGN-UP </button>
+        </form>
+    </center>
+</body>
+<script src="login.js"></script>
+</html>

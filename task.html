@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PROJECT-1 </title>
+    <style>
+        .container {
+            background-color: transparent;
+            box-shadow: -1px 1px 15px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid transparent;
+            border-radius: 21px;
+            width: 30%;
+            height: fit-content;
+            margin-top: 21px;
+            padding: 10px 0px 25px 0px;
+        }
+
+        #taskInput {
+            width: 240px;
+            height: 28px;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+
+        #addTaskBtn {
+            width: 52px;
+            height: 31px;
+            background-color: darkorange;
+            border: 1px solid darkorange;
+            border-radius: 10px;
+            color: white;
+        }
+
+        #taskList {
+            list-style-type: none;
+            text-decoration: none;
+            padding: 0;
+        }
+
+        #taskList li {
+            background-color: transparent;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 10px;
+            margin-bottom: 5px;
+            width: 292px;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white;
+            overflow-wrap: anywhere;
+            gap: 9px;
+        }
+
+        #taskList li.completed {
+            text-decoration: line-through;
+            color: black;
+            background-color: white;
+        }
+
+        #taskList li:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .delete-btn {
+            background-color: red;
+            color: white;
+            width: fit-content;
+            height: fit-content;
+            padding: 5px 8px 5px 8px;
+            font-size: 12px;
+            border: 1px solid red;
+            border-radius: 6px;
+            overflow-wrap: normal;
+        }
+
+        .hom {
+            margin-top: -3px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <center>
+        <div class="container">
+            <form action="" method="post">
+                <h1 style="color: white;"> TASK-BAR </h1>
+                <input type="text" id="taskInput" placeholder="Enter new Task">
+                <button type="button" id="addTaskBtn"> ADD </button>
+            </form>
+            <ul id="taskList">
+            </ul>
+        </div>
+    </center>
+</body>
+<script src="task.js"></script>
+
+</html>

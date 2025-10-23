@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            background-color: transparent;
+            backdrop-filter: blur(100px);
+            color: white;
+            box-shadow: -10px 0 10px rgb(0, 0, 0, 0.1);
+            font-weight: 600;
+        }
+
+        body {
+            background-image: url(/nature\ \(3\).jpg);
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <form id="loginForm" action="" style="border: 2px solid black; width:30%; height:30%; padding: 15px 25px; margin-top: 136px; border-radius: 21px;"
+            method="post">
+            <h1>LOGIN</h1>
+            <label for="Gmail"> GMAIL: </label>
+            <input type="Gmail" id="loginGmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, }$" placeholder="Enter Gmail" name="fname" required> <br><br>
+            <label for="Password"> PASSWORD: </label>
+            <input type="password" id="loginPassword" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$"  title="Password must contain at least one uppercase letter, one lowercase letter, one number, one special character, and be 8-16 characters long." placeholder="Enter password" name="Password" required><br>
+            <p><a href="signup.html" style="color: white;"> don't have account? </a></p>
+            <button type="submit" style="background-color: #007bff; padding: 8px 15px 8px 15px; border: 1px solid black; border-radius: 12px;"> LOGIN </button>
+        </form>
+        <p id="errorMessage" style="color: red;"></p>
+        <script src="login.js"></script>
+    </center>
+</body>
+</html>

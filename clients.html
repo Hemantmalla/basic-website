@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PROJECT-1 </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .hom {
+            margin-top: -3px;
+        }
+
+        #content {
+            background-color: transparent;
+            backdrop-filter: blur(3px);
+            box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.5);
+            border: 1px solid transparent;
+            border-radius: 21px;
+            margin: 0px 234px;
+        }
+
+        #table {
+            border-radius: 21px;
+            border-color: black;
+            color: white;
+            border-style: double;
+            text-align: center;
+            width: 100%;
+            padding-top: 4px;
+            padding-bottom: 4px;
+        }
+
+        .heading {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        body {
+            margin-top: 21px;
+            overflow-x: scroll;
+        }
+
+        body::-webkit-scrollbar {
+            background-color: transparent;
+            border-radius: 10px;
+        }
+
+        /* table-2 css*/
+        #content1 {
+            background-color: none;
+            backdrop-filter: blur(3px);
+            box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.5);
+            border: 1px solid transparent;
+            border-radius: 21px;
+            margin: 0px 240px;
+        }
+
+        .table {
+            border-radius: 21px;
+            border-color: black;
+            color: white;
+            border-style: double;
+            text-align: center;
+            width: 100%;
+            padding-top: 42px;
+            padding-bottom: 42px;
+            row-gap: 18px;
+            display: grid;
+        }
+
+        .heading1 {
+            display: grid;
+            grid-template-columns: 1fr 0.3fr 1.6fr;
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        .left-col{
+            text-align: right;
+            margin-right: 31px;
+        }
+
+        .right-col{
+            text-align: left;
+            margin-left: 36px;
+        }
+
+        .back-arrow {
+            color: black;
+            font-size: 16px;
+            float: left;
+            margin-left: 170px;
+            float: inline-start;
+            cursor: pointer;
+            border: 1.5px solid orange;
+            background-color: white;
+            border-radius: 21px;
+            padding: 5px 10px;
+        }
+
+        .back-arrow:hover {
+            color: white;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <table id="table" class="table1">
+            <tr class="heading">
+                <th class="th1" style="font-size: 22px;">Name</th>
+                <th class="th2" style="font-size: 22px;">Email</th>
+                <th class="th3" style="font-size: 22px;">click-here</th>
+            </tr>
+            <tr class="heading" style="margin-top: 10px;">
+                <td id="tableList1"
+                    style="display: grid; text-align: justify; margin-left: 60px; width: 196px; gap: 10px; font-size: 18px;">
+                </td>
+                <td id="tableList2"
+                    style="display: grid; text-align: justify; margin-left: 54px; gap: 10px; font-size: 18px;"></td>
+                <td id="tableList3"
+                    style="display: grid; text-align: justify; margin-left: 72px; gap: 10px; font-size: 18px; width: 102px;">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <center><button id="bk-btn" class="back-arrow" style="display:none;">Back</button></center>
+    <div id="content1" style="display: none;">
+        <table id="rt" class="table">
+        </table>
+    </div>
+</body>
+<script>
+    $(document).ready(() => {
+
+        $("#content1").hide();
+
+        $.get('https://jsonplaceholder.typicode.com/users', (users) => {
+
+            const clickHere = "background-color: white; border: 2px solid darkorange; border-radius: 18px; color: black; font-weight: 600; font-size: 12px; padding: 4px 10px 4px 10px;";
+            
+            users.forEach(user => {
+
+                $("#tableList1").append(`<td> ${user.name} </td>`);
+                $("#tableList2").append(`<td> ${user.email} </td>`);
+                $("#tableList3").append(`<td><button class="buttonHover" style= "${clickHere}" data-user-id="btn-${user.id}" onclick="fun(${user.id})"> click-here </button></td>`);
+                
+                $(".buttonHover").hover(function () {
+                    $(this).css("background-color", "darkorange").css("border", "2px solid darkorange").css("color", "white");
+                }, function () {
+                    $(this).css("background-color", "white").css("color", "black");
+                });
+            });
+
+        });
+
+    });
+    $("#bk-btn").click(() => {
+        $("#content1").hide();
+        $("bk-btn").hide();
+        $("#content").show();
+    })
+
+    function fun(usrid) {
+        $("#content").hide();
+        $("#rt").empty();
+        $.get('https://jsonplaceholder.typicode.com/users/' + usrid, (user) => {
+
+
+            $("#rt").append(`<tr class="heading1"><td class="left-col">Name </td> <td> : </td> <td class="right-col"> ${user.name} </td></tr>`);
+            $("#rt").append(`<tr class="heading1"><td class="left-col">User-Name </td> <td> : </td> <td class="right-col"> ${user.username} </td></tr>`);
+            $("#rt").append(`<tr class="heading1"><td class="left-col">Email </td> <td> : </td> <td class="right-col"> ${user.email} </td></tr>`);
+            $("#rt").append(`<tr class="heading1"><td class="left-col">Phone-no </td> <td> : </td> <td class="right-col"> ${user.name} </td></tr>`);
+            $("#rt").append(`<tr class="heading1"><td class="left-col">Address </td> <td> : </td> <td class="right-col"> ${user.address.street}, ${user.address.suite}, </td></tr>`);
+            $("#rt").append(`<tr class="heading1"><td class="left-col">City </td> <td> : </td> <td class="right-col"> ${user.address.city} </td></tr>`);
+            $("#rt").append(`<tr class="heading1"><td class="left-col">Zip-Code </td> <td> : </td> <td class="right-col"> ${user.address.zipcode} </td></tr>`);
+
+            $("#content1").show();
+            $("#bk-btn").show();
+            $("#content1").slideDown().css(1000);
+        });
+    }
+</script>
+
+</html>

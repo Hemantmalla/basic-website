@@ -1,0 +1,100 @@
+.clock {
+    background-color: transparent;
+    box-shadow: -3px 1px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    border: 1px solid transparent;
+    border-radius: 21px;
+    height: 54px;
+    width: fit-content;
+    padding: 0px 20px 0px 20px;
+    margin-top: -76px;
+    float: right;
+    margin-right: 0px;
+}
+
+#time {
+    font-weight: 700;
+    color: white;
+    font-size: 24px;
+    margin-top: 14px;
+}
+
+.hom {
+    margin-top: -3px;
+}
+
+.text-box {
+    margin-top: -3px;
+}
+
+#container {
+    display: none;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 15px 13px 15px;
+    background-color: transparent;
+    box-shadow: -2px 1px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid transparent;
+    border-radius: 21px;
+}
+
+#inputTxtBox {
+    width: 250px;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+li {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 16px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 21px;
+    width: fit-content;
+    height: fit-content;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    overflow-wrap: anywhere;
+    gap: 9px;
+}
+
+li:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* notes */
+.notes {
+    background-color: transparent;
+    box-shadow: -2px 1px 15px rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(6px);
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    width: 91.5%;
+    height: 300px;
+    border: 1px solid white;
+    border-radius: 31px;
+    margin: 0px;
+    overflow-y: scroll;
+}
+
+.notes::-webkit-scrollbar {
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+/* notes input box */
+.inputTextBox {
+    width: 25%;
+    height: 31px;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-left: 110px;
+}

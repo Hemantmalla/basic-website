@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PROJECT-1 </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="setting.css">
+    <style>
+        .hom {
+            margin-top: -3px;
+        }
+
+        #profile {
+            margin-top: 0px;
+            margin-left: 296px;
+        }
+
+        button {
+            float: right;
+            padding: 8px;
+            margin-right: 12px;
+            background-color: orange;
+            color: white;
+            border-radius: 10px;
+            border: 1px solid orange;
+            font-weight: 600;
+            font-size: 18px;
+            font-family: auto;
+        }
+
+        #content {
+            width: 400px;
+            height: fit-content;
+            padding: 20px;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 21px;
+            margin-left: 390px;
+        }
+
+        .darkTheme {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        .edit {
+            width: 21px;
+            height: 21px;
+            margin-top: -5px;
+            margin-left: -4px;
+        }
+        #edit{
+            display: none;
+            height: 30px;
+            width: 30px;
+        }
+    </style>
+</head>
+
+<body id="settings">
+    <div style="display: flex; flex-direction:row; margin-top: 20px;">
+        <div id="content">
+            <div class="toggle" id="toggle">
+                <input type="checkbox" checked>
+                <label></label>
+            </div>
+            <p id="p2"></p>
+            <p id="p3"></p>
+            <p id="p4"></p>
+        </div>
+        <a href="profile.html"><button type="button" id="profile"> PROFILE </button></a>
+        <button type="button" id="edit"><img src="edit.png" alt="Edit" class="edit"></button>
+    </div>
+</body>
+<script>
+    //const body = $("body");
+    //const switched = $("#toggle");
+    //const currentTheme = document.getElementsByTagName("body");
+    //$("#switched").on("click", ()=>{
+    //    if($(this).is(":checked")){
+    //        $("body").removeClass("#currentTheme").addClass("darkTheme");
+    //        localStorage.setItem("theme", "dark");
+    //    }
+    //    else{
+    //        $("body").removeClass("darkTheme").addClass("currentTheme");
+    //        localStorage.setItem("theme", "light");
+    //    }
+    //});
+    if (document.body.id === "settings") {
+        const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+        //const users = JSON.parse(localStorage.getItem("users"));
+        if (loggedInUser) {
+            $("#p2").append(`<p>Name: ${loggedInUser.name}</p>`);
+            $("#p3").append(`<p>Gmail: ${loggedInUser.gmail}</p>`);
+            $("#p4").append(`<p>Password: ${loggedInUser.password}</p>`);
+            //p2.textcontent = `Name: ${loggedInUser.name}`;
+            //p3.textcontent = `Gmail: ${loggedInUser.gmail}`;
+            //p4.textcontent = `Password: ${loggedInUser.password}`;
+        }
+    }
+</script>
+
+</html>

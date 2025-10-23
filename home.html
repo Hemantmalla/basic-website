@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PROJECT-1 </title>
+    <link rel="stylesheet" href="home.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #welcomeMessage {
+            color: white;
+            background-color: transparent;
+            border: 1px solid transparent;
+            border-radius: 21px;
+            box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(12px);
+            width: fit-content;
+            height: fit-content;
+            padding: 15px 20px;
+            font-size: 21px;
+            font-weight: 600;
+            margin-left: 500px;
+        }
+
+        body {
+            margin-top: -2px;
+            overflow-x: scroll;
+        }
+
+        body::-webkit-scrollbar {
+            background-color: transparent;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body id="home">
+    <p id="welcomeMessage"></p>
+    <div class="clock">
+        <p id="time">00:00:00</p>
+    </div> <br>
+    <div class="text-box">
+        <p id="notes" class="notes">
+        </p>
+        <button id="addTaskBtn" type="button"
+            style="background-color: darkorange; border: 1px solid darkorange; border-radius: 18px; color: white; font-weight: 600; font-size: 20px; padding: 10px 15px 10px 15px; float: right; margin-right: 24px; margin-top: -78px;">
+            Add </button>
+    </div>
+    <div id="container">
+        <input type="text" id="inputTxtBox">
+        <button id="addInputBtn" type="button"
+            style="background-color: #006eff; border: 1px solid darkorange; border-radius: 18px; color: white; font-weight: 600; font-size: 20px; padding: 3px 12px 6px 12px;">
+            Add </button>
+    </div>
+
+    <ul id="taskList"></ul>
+</body>
+<script src="home.js"></script>
+<script src="login.js"></script>
+
+</html>
